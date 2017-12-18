@@ -4,23 +4,32 @@
 <style>
   body{
   	font-family: arial;
+	margin: 0;
+	padding: 0;
+  }
+  .container{
+    max-width: 700px;
+	background-position: center;
+    margin: 0 auto;
+	
   }
 
 </style>
 </head>
 <body>
-    <div>
+    <div style="background-color: skyblue; padding: 20px; position: fixed; width: 100%;margin-top: -150px;">
         <form action="/query" method="get">
-        <pre align="center">
-<input type="text" name="q" placeholder="Query...." style="border: 2px solid black;padding: 8px;"><input type="submit" value="Search" style="color: red;background-color: black;border: 2px solid black;padding: 8px;font-weight: bold;">
+         <pre >
+<b style="font-size: 70px;float: left;color: purple">MUSA</b><input type="text" name="q" placeholder="Query...." style="border: 2px solid black;padding: 8px;margin-left: 400px;"><input type="submit" value="Search" style="color: red;background-color: black;border: 2px solid black;padding: 8px;font-weight: bold;">
         </pre>
         </form>
     </div>
-    <div>
+    <div style="margin-top: 150px;" class="container">
+	   <p style="color: purple;"><i><%= typeof data != 'undefined' ? data.length+' result found!!':'' %></i></p>
        <p style="font-weight: bold;color: red;"><%= typeof err != 'undefined' ? err : '' %></p>
        <% if( typeof data != 'undefined'){ %>
        <% for(var i=0;i < data.length;i++){ %>
-       <h2><a href="#" style="text-decoration: none;">
+       <h2><a href="#" style="text-decoration: none;color: darkblue;">
        <%= typeof data[i].title != 'undefined' ? data[i].title.toUpperCase() : 'error in ejs' %>
        </a></h2>
        <p><%= typeof data[i].description != 'undefined' ? data[i].description : '' %></p>

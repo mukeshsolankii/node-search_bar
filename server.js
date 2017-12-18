@@ -16,6 +16,7 @@ app.get('/' , (req ,res)=>{ res.render('db'); });//We use  this '()=>' instead o
 
 app.get('/query', function(req ,res){
 	var search =  req.query.q;
+	
 	//Quering the database....
 	connection.query(`SELECT * FROM search WHERE title LIKE '%${search}%' OR description LIKE '%${search}%'`,function(err , result , fields){
 		if(err){
