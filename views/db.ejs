@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Search bar</title>
+<style>
+  body{
+  	font-family: arial;
+  }
+
+</style>
+</head>
+<body>
+    <div>
+        <form action="/query" method="get">
+        <pre align="center">
+<input type="text" name="q" placeholder="Query...." style="border: 2px solid black;padding: 8px;"><input type="submit" value="Search" style="color: red;background-color: black;border: 2px solid black;padding: 8px;font-weight: bold;">
+        </pre>
+        </form>
+    </div>
+    <div>
+       <p style="font-weight: bold;color: red;"><%= typeof err != 'undefined' ? err : '' %></p>
+       <% if( typeof data != 'undefined'){ %>
+       <% for(var i=0;i < data.length;i++){ %>
+       <h2><a href="#" style="text-decoration: none;">
+       <%= typeof data[i].title != 'undefined' ? data[i].title.toUpperCase() : 'error in ejs' %>
+       </a></h2>
+       <p><%= typeof data[i].description != 'undefined' ? data[i].description : '' %></p>
+       <% }} %>
+       
+    </div>
+</body>
+</html>
