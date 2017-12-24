@@ -6,21 +6,90 @@
   	font-family: arial;
 	margin: 0;
 	padding: 0;
+	background-color: #02010e;
   }
   .container{
     max-width: 700px;
 	background-position: center;
     margin: 0 auto;
-	
+	background-color: #efeaea;
+    padding: 50px;
+    border-radius: 40px;
   }
+  .awesome {
+      font-style: italic;
+      color:#313131;
+      font-size:45px;
+      font-weight: bold;
+      
+      -webkit-animation:colorchange 20s infinite alternate;
+      
+      
+    }
+
+    @-webkit-keyframes colorchange {
+      0% {
+        
+        color: blue;
+      }
+      
+      10% {
+        
+        color: #8e44ad;
+      }
+      
+      20% {
+        
+        color: #1abc9c;
+      }
+      
+      30% {
+        
+        color: #d35400;
+      }
+      
+      40% {
+        
+        color: blue;
+      }
+      
+      50% {
+        
+        color: #34495e;
+      }
+      
+      60% {
+        
+        color: red;
+      }
+      
+      70% {
+        
+        color: #2980b9;
+      }
+      80% {
+     
+        color: #f1c40f;
+      }
+      
+      90% {
+     
+        color: #2980b9;
+      }
+      
+      100% {
+        
+        color: pink;
+      }
+    }
 
 </style>
 </head>
 <body>
-    <div style="background-color: skyblue; padding: 20px; position: fixed; width: 100%;margin-top: -150px;">
-        <form action="/query" method="get">
+    <div style="background-color: #212F3D; padding: 20px; position: fixed; width: 100%;margin-top: -150px;">
+        <form action="/query" method="get" align="center">
          <pre >
-<b style="font-size: 70px;float: left;color: purple">MUSA</b><input type="text" name="q" placeholder="Query...." style="border: 2px solid black;padding: 8px;margin-left: 400px;"><input type="submit" value="Search" style="color: red;background-color: black;border: 2px solid black;padding: 8px;font-weight: bold;">
+<b style="font-size: 70px;float: left;color: yellow;font-family: Swis721 BdOul BT;" class="awesome">MUSA</b><input type="text" name="q" placeholder="Query...." style="border: 2px solid black;padding: 8px;margin-left: 400px;"><input type="submit" value="Search" style="color: red;background-color: black;border: 2px solid black;padding: 8px;font-weight: bold;">
         </pre>
         </form>
     </div>
@@ -34,7 +103,10 @@
        </a></h2>
        <p><%= typeof data[i].description != 'undefined' ? data[i].description : '' %></p>
        <% }} %>
-       
+       <p align="right" style="color: darkblue;font-family:jokerman">@ All right reserved by Mukesh Solanki.</p>
     </div>
+	<div>
+	   <p>@ All right reserved by Mukesh Solanki.</p>
+	</div>
 </body>
 </html>
